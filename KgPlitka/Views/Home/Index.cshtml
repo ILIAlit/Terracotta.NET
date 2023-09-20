@@ -1,0 +1,121 @@
+﻿@*
+For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/indexStyle.css">
+</head>
+
+
+
+<body>
+
+    <div class="wrapper">
+
+        <main class="main _container">
+
+            <form class="search" id="formSerchData">
+                <div class="search__icon">
+                    <input class="search__input" type="text" name="searcData" placeholder="Поиск">
+                </div>
+                <input class="search__btn" type="submit" value="Найти"></input>
+            </form>
+
+            <div class="nav">
+                <div class="nav__select">
+                    <div class="nav__part-item">
+                        <input type="radio" value="part" id="search-by-part" name="radio" />
+                        <label for="search-by-part" class="nav__item">Артикул</label>
+                        <div class="line line-select"></div>
+                    </div>
+                    <div class="line nav__line"></div>
+                    <div class="nav__name-item">
+                        <input type="radio" value="name" checked="" id="search-by-name" name="radio" />
+                        <label for="search-by-name" class="nav__item">Название</label>
+                        <div class="line line-select"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="add" id="formProductData" name="product-form">
+                <div class="add__body">
+                    <input type="hidden" name="id" value="0">
+                    <input type="text" class="js-input" name="name" placeholder="Название" required>
+                    <input type="text" class="js-input js-input-part" name="part" placeholder="Артикул"  pattern="[0-9]{1,7}" required>
+                    <select name="location">
+                        <option value="Зал">Зал</option>
+                        <option value="Нижний">н/с</option>
+                    </select>
+                    <input type="text" class="js-input" name="locationNum" placeholder="Место" required>
+                    <button class="nav__add-btn button" type="submit">Сохранить</button>
+                </div>
+                <div class="line add__line"></div>
+            </form>
+
+            <svg class="load-anim main__anim" viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+            </svg>
+
+            <div class="main__search-btn-close">
+                <button class="button search-btn-close">Закрыть</button>
+            </div>
+
+            <div class="warning">
+                <div class="warning__wrap">
+                    <div class="warning__body">
+                        <div class="warning__icon">
+                            <img src="~/img/reload.svg">
+                        </div>
+                        <div class="warning__title">Есть новые данные</div>
+                        <div class="warning__close"><svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z" fill="#393a37"></path></svg></div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="products">
+
+               @* <div class="products__item">
+                    <div class="products__body">
+                        <div class="products__title">
+                            <span class="products__order">1.</span>
+                            <span class="products__name">Antique G</span>
+                        </div>
+                        <div class="products__article-num">123654</div>
+                        <div class="products__position">
+                            <div class="products__position__elem1">н/с</div>
+                            <div class="products__position__elem2">F21-2</div>
+                        </div>
+                    </div>
+                    <div class="products__btn hide">
+                        <div class="nav">
+                            <div class="nav__select">
+                                <div class="nav__item products__btn-change">Изменить</div>
+                                <div class="line nav__line"></div>
+                                <div class="nav__item products__btn-remove">Удалить</div>
+                            </div>
+                        </div>
+
+                        <button class="products__btn-change button">Изменить</button>
+                        <button class="products__btn-remove button">Удалить</button>
+                    </div>
+                    <div class="line products__line"></div>
+                </div>*@
+            </div>
+        </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="~/js/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/indexPage.js"></script>
+</body>
+</html>
+
+
